@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+/*
 const getTopicById = async (id) => {
   const apiUrl = process.env.API_URL
   try {
@@ -31,7 +31,7 @@ export default async function ViewTopic({ params }) {
       </p>
       <p className="text-lg">{topic.description}</p>
 
-      {/* Extra Fields */}
+
       {topic.extraFields && topic.extraFields.length > 0 && (
         <div className="mt-4">
           <h3 className="font-bold text-xl">Detalles adicionales:</h3>
@@ -50,3 +50,4 @@ export default async function ViewTopic({ params }) {
     </div>
   );
 }
+*/

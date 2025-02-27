@@ -1,5 +1,5 @@
 import Link from "next/link";
-/*
+
 const getTopicById = async (id) => {
   const apiUrl = process.env.API_URL
   try {
@@ -50,4 +50,3 @@ export default async function ViewTopic({ params }) {
     </div>
   );
 }
-*/

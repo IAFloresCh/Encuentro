@@ -58,13 +58,15 @@ export default function AddTopic() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-lg flex flex-col gap-6">
+      <h1 className="text-3xl font-semibold text-gray-900 mb-6">Agregar Tema</h1>
+
       {/* Input de fecha */}
       <input
         type="date"
         value={selectedDate}
         onChange={(e) => setSelectedDate(e.target.value)}
-        className="border border-slate-500 px-8 py-2"
+        className="border border-gray-300 px-4 py-2 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
         required
       />
 
@@ -72,7 +74,7 @@ export default function AddTopic() {
       <input
         onChange={(e) => setTitle(e.target.value)}
         value={title}
-        className="border border-slate-500 px-8 py-2"
+        className="border border-gray-300 px-4 py-2 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
         type="text"
         placeholder="Título del Tema"
       />
@@ -81,33 +83,33 @@ export default function AddTopic() {
       <input
         onChange={(e) => setDescription(e.target.value)}
         value={description}
-        className="border border-slate-500 px-8 py-2"
+        className="border border-gray-300 px-4 py-2 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
         type="text"
         placeholder="Descripción del Tema"
       />
 
       {/* Extra Fields Dinámicos */}
       {extraFields.map((field, index) => (
-        <div key={index} className="flex flex-col gap-2">
+        <div key={index} className="flex flex-col gap-4 mb-4">
           <input
             value={field.text}
             onChange={(e) => updateExtraField(index, "text", e.target.value)}
-            className="border border-slate-500 px-8 py-2"
+            className="border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             type="text"
             placeholder={`Titulo ${index + 1}`}
           />
           <textarea
             value={field.textarea}
             onChange={(e) => updateExtraField(index, "textarea", e.target.value)}
-            className="border border-slate-500 px-8 py-2"
+            className="border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder={`Texto ${index + 1}`}
           ></textarea>
           <button
             type="button"
             onClick={() => removeExtraField(index)}
-            className="bg-red-600 text-white px-3 py-2"
+            className="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 transition-colors"
           >
-            X
+            Eliminar campo
           </button>
         </div>
       ))}
@@ -116,13 +118,13 @@ export default function AddTopic() {
       <button
         type="button"
         onClick={addExtraField}
-        className="bg-blue-600 font-bold text-white py-2 px-4 w-fit"
+        className="bg-blue-600 text-white py-2 px-6 rounded-full mb-4 hover:bg-blue-700 transition-colors"
       >
         Agregar Tarjeta
       </button>
 
       {/* Botón para enviar */}
-      <button type="submit" className="bg-green-600 font-bold text-white py-3 px-6 w-fit">
+      <button type="submit" className="bg-green-600 text-white py-3 px-6 rounded-full w-full hover:bg-green-700 transition-colors">
         Agregar Tema
       </button>
     </form>
